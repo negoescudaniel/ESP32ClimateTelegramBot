@@ -4,8 +4,8 @@
 #include <Adafruit_AHTX0.h>
 
 // Wi-Fi credentials
-const char *ssid = "CarteaJunglei";
-const char *password = "daniel321";
+const char *ssid = "YOUR_WIFI_SSID";
+const char *password = "YOUR_WIFI_PASSWORD";
 
 // CoAP UDP and handler objects
 WiFiUDP udp;
