@@ -74,9 +74,7 @@ TeleTempBot relies on the following libraries and APIs:
 
 - **ESP32 Libraries** (for Arduino IDE):
   - `Adafruit AHT10/AHT20` – for reading data from the AHT21 temperature and humidity sensor.
-  - `ESPAsyncWebServer` – enables asynchronous web server functionality on the ESP32.
-  - `ESP32 Telegram Bot` – handles communication between the ESP32 and Telegram API.
-
+  - `WiFi.h` `WiFiUdp.h` `coap-simple.h` `Adafruit_AHTX0.h`
 - **Python Libraries**:
   - `CoAPthon3` and `aiocoap` – for 
   - `matplotlib` – for creating a local web server if needed.
