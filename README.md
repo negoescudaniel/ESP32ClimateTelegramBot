@@ -115,6 +115,10 @@ ESPClimateBot relies on the following libraries and APIs for its core functional
 - **APIs**:
     - **Telegram Bot API** – Enables seamless integration with Telegram, allowing the bot to send and receive messages, images, and commands directly within the Telegram app. This API provides the bot with essential functionalities such as handling commands (e.g., `/start`, `/help`), interacting with users in real time, and delivering sensor data and graphs as chat messages or images.
 
+## Possible Use Cases
+
+- **Home Climate Monitoring**: Users can place the ESP32 with the AHT21 sensor in their homes to monitor temperature and humidity remotely. It helps maintain optimal indoor climate conditions, which is essential for health, comfort, and even protecting furniture or electronics sensitive to humidity.
+- **Greenhouse Management**: TeleTempBot can be used in greenhouses to monitor climate conditions, ensuring that temperature and humidity stay within ideal ranges for plant growth. It enables remote monitoring and reduces the need for constant physical checks, helping farmers or hobbyists respond promptly to adverse conditions.
 
 ## Possible Future Improvements
 
@@ -129,14 +133,6 @@ This project could be expanded in several ways to enhance its functionality and 
 - **Automated Control Systems**: Expanding the server-side logic to implement automated control systems would further enhance the project. For instance, the server could be programmed to automatically activate or deactivate relays when specific environmental conditions are met (e.g., turning on a humidifier if humidity falls below a certain threshold). Such automation would increase the project’s utility and enable it to function as an autonomous climate control system.
 
 These improvements would add flexibility, enhance usability, and provide a more robust platform for monitoring and controlling environmental conditions remotely.
-
-
-## Possible Use Cases
-
-- **Home Climate Monitoring**: Users can place the ESP32 with the AHT21 sensor in their homes to monitor temperature and humidity remotely. It helps maintain optimal indoor climate conditions, which is essential for health, comfort, and even protecting furniture or electronics sensitive to humidity.
-- **Greenhouse Management**: TeleTempBot can be used in greenhouses to monitor climate conditions, ensuring that temperature and humidity stay within ideal ranges for plant growth. It enables remote monitoring and reduces the need for constant physical checks, helping farmers or hobbyists respond promptly to adverse conditions.
-
-
 
 
 ## Resources
