@@ -35,9 +35,14 @@ ESPClimateBot is a convenient solution for remote monitoring of environmental da
 
 ### Telegram Bot Commands
 
+- **/sensor_data**: Retrieves real-time temperature and humidity data from the sensor.
+- **/climate_graph**: Returns a graph showing the evolution of temperature and humidity over a specified period of time.
+- **/start**: Sends a welcome message.
+- **/help**: Provides information about available commands.
+- **/send_photo**: Sends a possible profile photo for the bot.
+- **/caps**: Returns the given text in all uppercase letters.
+- **/echo**: Repeats the given text exactly as provided.
 
-- **/command**: Description of what the command does.
-- **/anothercommand**: Another command's description.
 
 ### Local Display
 
@@ -65,8 +70,20 @@ Include the circuit diagram or schematic here, or a link to it if hosted externa
 
 
 ## Code Functionality
+- **bot.py** - Main File:
+    - Sets up logging and initializes the Telegram bot.
+    - Implements bot commands for data retrieval, visualization, and basic interaction.
+    - Logs sensor data to a CSV file and schedules periodic data retrieval.
+    
+- **connectivity.py** - CoAP Connectivity:
+    - Connects to an ESP32 device via CoAP protocol to request sensor data.
+    - Sends CoAP requests every 3 seconds to retrieve sensor readings from the ESP32.
+    - Uses the `coap-client` command to communicate with the ESP32 and captures the device's response for logging.
 
-Explain the core functionality of the code, including any important logic or algorithms, such as how data flows or key functions for each mode (manual, autonomous, etc.).
+- **csvHandling.py** - CSV Class:
+    - Initializes and logs temperature and humidity data to a CSV file.
+    - Retrieves temperature and humidity readings within a specified date range.
+    - It has a function that plots daily average temperature and humidity trends, saving the plot as an image.
 
 ## Dependencies
 
