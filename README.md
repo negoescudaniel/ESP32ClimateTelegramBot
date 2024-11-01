@@ -84,21 +84,36 @@ Include the circuit diagram or schematic here, or a link to it if hosted externa
     - Initializes and logs temperature and humidity data to a CSV file.
     - Retrieves temperature and humidity readings within a specified date range.
     - It has a function that plots daily average temperature and humidity trends, saving the plot as an image.
+      
+- **ESP32TELEGRAMBoT.ino** - ESP32 Code:
+    - Connects the ESP32 to the specified Wi-Fi network.
+    - Initializes and reads temperature and humidity data from the AHT21 sensor.
+    - Hosts a CoAP server that responds to "sensor" endpoint requests with formatted temperature and humidity data.
+    - Sends the sensor readings back to the CoAP client when requested.
+    - Sends the sensor reading to an Arduino Uno via serial communication.
+      
+- **ArduinoUnoTelegramBotProject.ino** - Arduino Uno Code:
+    - Interfaces with a LiquidCrystal display (LCD) to show temperature and humidity data received via serial communication.
+    - Reads incoming data in the format of "temperature humidity" and displays it on a 16x2 LCD screen.
 
 ## Dependencies
 
-TeleTempBot relies on the following libraries and APIs:
+ESPClimateBot relies on the following libraries and APIs for its core functionality:
 
-- **ESP32 Libraries** (for Arduino IDE):
-  - `Adafruit_AHTX0.h` – for reading data from the AHT21 temperature and humidity sensor.
-  - `WiFi.h` `WiFiUdp.h` `coap-simple.h` 
-- **Python Libraries**:
-  - `CoAPthon3` and `aiocoap` – for 
-  - `matplotlib` – for creating a local web server if needed.
-  - `pandas` - for handling CSV files
+- **ESP32 Libraries (for Arduino IDE)**
+    - **Adafruit_AHTX0.h**: Used to read temperature and humidity data from the AHT10 or AHT20 sensor on the ESP32.
+    - **WiFi.h**: Manages Wi-Fi connections, enabling the ESP32 to connect to a network.
+    - **WiFiUdp.h**: Provides UDP communication support, which is essential for CoAP.
+    - **coap-simple.h**: Implements CoAP (Constrained Application Protocol) for communication between devices, allowing low-power, efficient data exchange.
 
+- **Python Libraries**
+    - **CoAPthon3**: A Python library for CoAP protocol, making it possible to create CoAP clients and servers to handle lightweight data transfer between devices.
+    - **aiocoap**: An advanced, asynchronous CoAP library in Python, suitable for applications that benefit from non-blocking CoAP messaging and efficient multi-client handling. `aiocoap` provides tools for creating CoAP-based communication in Python, supporting both synchronous and asynchronous CoAP calls.
+    - **matplotlib**: Generates graphs and visualizations of temperature and humidity data.
+    - **pandas**: Manages and processes CSV files, enabling easy data storage and retrieval of sensor readings.
+  
 - **APIs**:
-  - **Telegram Bot API** – used to communicate with Telegram and enable bot functionalities.
+    - **Telegram Bot API** – Enables seamless integration with Telegram, allowing the bot to send and receive messages, images, and commands directly within the Telegram app. This API provides the bot with essential functionalities such as handling commands (e.g., `/start`, `/help`), interacting with users in real time, and delivering sensor data and graphs as chat messages or images.
 
 
 ## Possible Future Improvements
