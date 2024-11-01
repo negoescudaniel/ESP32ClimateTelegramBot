@@ -85,7 +85,7 @@ async def climate_graph(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Test telegram command for sending a photo
 async def send_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Define the path to the local image or a URL
-    photo_path = 'Idei.png' 
+    photo_path = 'botProfilePicture.png' 
     
     # Send the photo to the user
     await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo_path, 'rb'))
