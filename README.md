@@ -48,7 +48,6 @@ ESPClimateBot is a convenient solution for remote monitoring of environmental da
 
 The local display shows the values for temperature(°C) and the relative humidity(%) given by the AHT21 sensor. The display is updated every 2 seconds.
 
-
 ## Installation
 
 1. Clone the Repository
@@ -60,9 +59,10 @@ The local display shows the values for temperature(°C) and the relative humidit
 
 - **ESP32 Board**
 - **AHT21 Temperature and Humidity Sensor (I2C)**
+- **Arduino Uno**
 - **16x2 LCD Display** for local data output
-
-
+- **Potentiometer** for LCD brightness adjusting
+- **Three 1kOhm Resistors** used as a voltage divider for serial communication between the boards 
 
 ## Circuit Diagram / Schematic
 
@@ -118,9 +118,17 @@ ESPClimateBot relies on the following libraries and APIs for its core functional
 
 ## Possible Future Improvements
 
-Ideas for potential improvements:
-- Improvement 1
-- Improvement 2
+This project could be expanded in several ways to enhance its functionality and adaptability:
+
+- **Additional Bot Commands**: New commands could be added to provide more insightful data analysis. For example, commands to calculate and return the average temperature or humidity for a specified day, week, or month would give users more contextual data. Further commands could also allow users to set thresholds and receive alerts when sensor readings go beyond specified limits.
+
+- **Integration of More Sensors**: The ESP32 board can be wired with additional sensors, such as CO2, light, or soil moisture sensors, to broaden the types of environmental data collected. This would create a more comprehensive environmental monitoring system and enable users to track multiple parameters.
+
+- **Remote Control of Actuators**: By connecting relays or other actuators to the ESP32, users could remotely control devices such as fans, heaters, or humidifiers through bot commands. This would allow users to respond to specific sensor readings by activating or deactivating equipment.
+
+- **Automated Control Systems**: Expanding the server-side logic to implement automated control systems would further enhance the project. For instance, the server could be programmed to automatically activate or deactivate relays when specific environmental conditions are met (e.g., turning on a humidifier if humidity falls below a certain threshold). Such automation would increase the project’s utility and enable it to function as an autonomous climate control system.
+
+These improvements would add flexibility, enhance usability, and provide a more robust platform for monitoring and controlling environmental conditions remotely.
 
 
 ## Possible Use Cases
