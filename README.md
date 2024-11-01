@@ -1,4 +1,4 @@
-# ESPWeatherBot
+# ESPClimateBot
 
 
 ## Table of Contents
@@ -20,7 +20,7 @@
 
 ## Overview
 
-ESPWeatherBot is a convenient solution for remote monitoring of environmental data. It connects to Telegram, allowing users to retrieve temperature and humidity data through simple commands. The project uses the ESP32 microcontroller with an AHT21 sensor over I2C to gather data, which is displayed locally and available remotely via Telegram commands.
+ESPClimateBot is a convenient solution for remote monitoring of environmental data. It connects to Telegram, allowing users to retrieve temperature and humidity data through simple commands. The project uses the ESP32 microcontroller with an AHT21 sensor over I2C to gather data, which is displayed locally and available remotely via Telegram commands.
 
 
 ## Features
@@ -41,7 +41,7 @@ ESPWeatherBot is a convenient solution for remote monitoring of environmental da
 
 ### Local Display
 
-The local display shows the values for temperature(°C) and the relative humidity(%) given by the AHT21 sensor. The display is updated every 200ms.
+The local display shows the values for temperature(°C) and the relative humidity(%) given by the AHT21 sensor. The display is updated every 2 seconds.
 
 
 ## Installation
@@ -73,8 +73,8 @@ Explain the core functionality of the code, including any important logic or alg
 TeleTempBot relies on the following libraries and APIs:
 
 - **ESP32 Libraries** (for Arduino IDE):
-  - `Adafruit AHT10/AHT20` – for reading data from the AHT21 temperature and humidity sensor.
-  - `WiFi.h` `WiFiUdp.h` `coap-simple.h` `Adafruit_AHTX0.h`
+  - `Adafruit_AHTX0.h` – for reading data from the AHT21 temperature and humidity sensor.
+  - `WiFi.h` `WiFiUdp.h` `coap-simple.h` 
 - **Python Libraries**:
   - `CoAPthon3` and `aiocoap` – for 
   - `matplotlib` – for creating a local web server if needed.
