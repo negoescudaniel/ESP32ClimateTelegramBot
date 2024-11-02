@@ -4,17 +4,17 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Dependencies](#dependencies)
-3. [Features](#features)
-4. [Bot Commands / Usage](#bot-commands--usage)
+2. [Features](#features)
+3. [Usage](#usage)
     - [Telegram Commands](#telegram-commands)
     - [Local Display](#local-display)
-5. [Installation](#installation)
-6. [Hardware Components](#hardware-components)
-7. [Circuit Diagram / Schematic](#circuit-diagram--schematic)
-8. [Code Functionality](#code-functionality)
-9. [Possible Future Improvements](#possible-future-improvements)
-10. [Possible Use Cases](#possible-use-cases)
+4. [Hardware Components](#hardware-components)
+5. [Circuit Diagram / Schematic](#circuit-diagram--schematic)
+6. [Code Functionality](#code-functionality)
+7. [Dependencies](#dependencies)
+8. [Additional Notes](#additional-notes)
+9. [Possible Use Cases](#possible-use-cases)
+10. [Possible Future Improvements](#possible-future-improvements)
 11. [Resources](#resources)
 
 
@@ -48,12 +48,6 @@ ESPClimateBot is a convenient solution for remote monitoring of environmental da
 
 The local display shows the values for temperature(°C) and the relative humidity(%) given by the AHT21 sensor. The display is updated every 2 seconds.
 
-## Installation
-
-1. Clone the Repository
-2. Install Required Libraries
-3. Flash the ESP32(and Arduino Uno)
-4. Configure Telegram Bot - Create a new bot on Telegram via BotFather and obtain your bot token and update your bot token and Wi-Fi credentials in the code files.
 
 ## Hardware Components
 
@@ -66,7 +60,7 @@ The local display shows the values for temperature(°C) and the relative humidit
 
 ## Circuit Diagram / Schematic
 
-Include the circuit diagram or schematic here, or a link to it if hosted externally.
+The circuit diagram for this project, detailing the connections between the ESP32, Arduino Uno, sensor, and LCD, is available in the `Circuit_diagram` directory in this GitHub repository. Please refer to this directory for a clear visual representation of the hardware setup, including pin configurations and wiring.
 
 
 ## Code Functionality
@@ -107,6 +101,7 @@ ESPClimateBot relies on the following libraries and APIs for its core functional
     - **coap-simple.h**: Implements CoAP (Constrained Application Protocol) for communication between devices, allowing low-power, efficient data exchange.
 
 - **Python Libraries**
+    - **python-telegram-bot**:This library provides a pure Python, asynchronous interface for the Telegram Bot API.
     - **CoAPthon3**: A Python library for CoAP protocol, making it possible to create CoAP clients and servers to handle lightweight data transfer between devices.
     - **aiocoap**: An advanced, asynchronous CoAP library in Python, suitable for applications that benefit from non-blocking CoAP messaging and efficient multi-client handling. `aiocoap` provides tools for creating CoAP-based communication in Python, supporting both synchronous and asynchronous CoAP calls.
     - **matplotlib**: Generates graphs and visualizations of temperature and humidity data.
@@ -115,6 +110,17 @@ ESPClimateBot relies on the following libraries and APIs for its core functional
 - **APIs**:
     - **Telegram Bot API** – Enables seamless integration with Telegram, allowing the bot to send and receive messages, images, and commands directly within the Telegram app. This API provides the bot with essential functionalities such as handling commands (e.g., `/start`, `/help`), interacting with users in real time, and delivering sensor data and graphs as chat messages or images.
 
+## Additional Notes
+
+- **Operating System**:  
+  This project and bot are intended to run on a Linux-based environment. The command-line interface in Linux is essential for the CoAP communication.
+- **Network Requirements**:  For the ESP32 module and the server to communicate successfully, **both devices must be connected to the same local network**. This ensures they can establish a reliable CoAP connection for exchanging data.
+- **Getting the Telegram Bot Token**:  
+  To run this bot, you'll need a bot token from Telegram. You can get your bot token by chatting with the [BotFather](https://t.me/BotFather) on Telegram. Once there, follow the prompts to create a new bot, and BotFather will provide you with a unique API token. Keep this token secure, as it grants control over your bot.
+- **LCD Display on a Separate Microcontroller**:  
+  Using a dedicated microcontroller, like an Arduino Uno, to display sensor data on an LCD screen makes it easier to expand the system with additional sensors and actuators in the future. By offloading the display functionality, you free up the ESP32 to handle other tasks and manage more complex interactions. In this project, the LCD was not powering up as expected, possibly due to insufficient power from the ESP32’s pins. To improve reliability, consider using an I2C LCD, which requires fewer connections and simplifies wiring.
+
+  
 ## Possible Use Cases
 
 - **Home Climate Monitoring**: Users can place the ESP32 with the AHT21 sensor in their homes to monitor temperature and humidity remotely. It helps maintain optimal indoor climate conditions, which is essential for health, comfort, and even protecting furniture or electronics sensitive to humidity.
@@ -137,6 +143,13 @@ These improvements would add flexibility, enhance usability, and provide a more 
 
 ## Resources
 
-Provide links to any resources, tutorials, or documentation that may be helpful for understanding or extending the project.
+- **[Python Telegram Bot Library](https://python-telegram-bot.org/)** – Official documentation and guides for using `python-telegram-bot` to easily interact with the Telegram Bot API in Python.
+- **[Telegram Bot Tutorial Video](https://www.youtube.com/watch?v=aNmRNjME6mE)** – A video guide that walks through the setup and functionality of a Telegram bot, which might help in understanding the BotFather setup and basic bot commands.
+- **[IoT Course Lab - CoAP Communication](https://ocw.cs.pub.ro/courses/iothings/laboratoare/2022/lab8)** – This lab guide from the IoT course at the University POLITEHNICA of Bucharest provides insights into CoAP communication, detailing both theoretical aspects and hands-on instructions for implementing CoAP in IoT projects.
+- **[CoAP Simple Library for ESP32](https://github.com/hirotakaster/CoAP-simple-library)** – This GitHub repository hosts a simple CoAP library designed for ESP32 devices, allowing easy setup for CoAP communication. It includes instructions, examples, and source code useful for integrating CoAP functionality with the ESP32.
+- **[CoAPthon3](https://github.com/Tanganelli/CoAPthon3)** – A Python library for CoAP (Constrained Application Protocol) designed for building CoAP clients and servers. This resource includes detailed documentation and examples that facilitate integration with IoT devices.
+
+
+
 
 
